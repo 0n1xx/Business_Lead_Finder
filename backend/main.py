@@ -21,3 +21,31 @@ app.add_middleware(
 
 # Read Google API key from environment variables
 GOOGLE_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY")
+
+# List of business categories with user-friendly display names
+CATEGORIES = {
+    "restaurant": "Restaurants",
+    "cafe": "Cafes",
+    "bar": "Bars",
+    "hair_care": "Hair Salons",
+    "beauty_salon": "Beauty Salons",
+    "gym": "Gyms",
+    "store": "Stores",
+    "clothing_store": "Clothing Stores",
+    "car_repair": "Auto Repair",
+    "plumber": "Plumbers",
+    "electrician": "Electricians",
+    "lawyer": "Lawyers",
+    "dentist": "Dentists",
+    "doctor": "Doctors",
+}
+
+# Endpoint to return available categories for frontend dropdown
+@app.get("/categories")
+def get_categories():
+    return {
+        "categories": [
+            {"value": key, "label": name}
+            for key, name in CATEGORIES.items()
+        ]
+    }
