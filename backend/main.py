@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file into memory
 load_dotenv()
 
+# Initialize FastAPI application
+app = FastAPI()
+
 # Allow frontend (React on port 3000) to make requests to backend (port 8000)
 app.add_middleware(
     CORSMiddleware,
