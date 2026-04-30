@@ -9,7 +9,7 @@ function SearchBar({ onSearch, isLoading }) {
 
     // Fetch categories from backend when component first loads
     useEffect(() => {
-        fetch("http://localhost:8000/categories")
+        fetch("https://businessleadfinder-production.up.railway.app/categories")
             .then(res => res.json())
             .then(data => setCategories(data.categories))
     }, [])
