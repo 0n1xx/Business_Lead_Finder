@@ -29,15 +29,17 @@ function App() {
         }
     }
     return (
-        <div className="app">
-            <h1>Business Lead Finder</h1>
-            <p>Find local businesses without a website</p>
-            <SearchBar onSearch={handleSearch} isLoading={isLoading} />
-            {total > 0 && (
-                <p>{total} businesses found without a website</p>
-            )}
-            <BusinessTable businesses={businesses} isLoading={isLoading} />
+      <div className="app">
+        <div className="header">
+          <h1>Business Lead Finder</h1>
+          <p>Find local businesses without a website</p>
         </div>
+        <SearchBar onSearch={handleSearch} isLoading={isLoading} />
+        {total > 0 && (
+          <p className="results-count">{total} businesses found without a website</p>
+        )}
+        <BusinessTable businesses={businesses} isLoading={isLoading} />
+      </div>
     )
 }
 export default App

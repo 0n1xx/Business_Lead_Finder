@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import httpx
 import os
+import asyncio
 from dotenv import load_dotenv
 
 # Load environment variables from .env file into memory

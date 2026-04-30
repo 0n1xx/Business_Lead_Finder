@@ -2,10 +2,10 @@
 function BusinessCard({ business }) {
     return (
         <tr>
-            <td>{business.name}</td>
-            <td>{business.address}</td>
-            <td>{business.phone || "No phone"}</td>
-            <td>{business.rating ? `${business.rating} ⭐ (${business.reviews})` : "No rating"}</td>
+            <td><span className="business-name">{business.name}</span></td>
+            <td><span className="business-address">{business.address}</span></td>
+            <td><span className="business-phone">{business.phone || "—"}</span></td>
+            <td><span className="rating">{business.rating ? `${business.rating} ★ (${business.reviews})` : "—"}</span></td>
         </tr>
     )
 }
