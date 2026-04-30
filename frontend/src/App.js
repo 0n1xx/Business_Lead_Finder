@@ -16,7 +16,7 @@ function App() {
         setBusinesses([])
         try {
             const response = await fetch(
-                `https://businessleadfinder-production.up.railway.app/search?city=${encodeURIComponent(city)}&category=${category}`
+                `https://businessleadfinderbackend-production.up.railway.app/search?city=${encodeURIComponent(city)}&category=${category}`
             )
             const data = await response.json()
             setBusinesses(data.businesses)
